@@ -1,0 +1,145 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+<div id="divContainer"></div> 
+
+<!-- <script>
+    ReactDOM.render(React.createElement('h1',null,'hello'),document.getElementById("divContainer"));
+</script>    -->
+
+<!-- <script type="text/babel">
+    function App(){
+        return(
+            <h1>hello js function</h1>
+        );
+    }
+    ReactDOM.render(<App/>,document.getElementById("divContainer"));
+</script>    -->
+
+<!-- <script type="text/babel">
+class App extends React.Component{
+    render(){
+        return(
+            <h1> hello js class</h1>
+        );
+    }
+} 
+ReactDOM.render(<App name="nameproperty"/>,document.getElementById("divContainer"));
+</script> -->
+
+<!-- <script type="text/babel">
+    function App(props){
+        return(
+            <h1>hello js function: {props.name}</h1>
+        );
+    }
+    ReactDOM.render(<App name="nameproperty"/>,document.getElementById("divContainer"));
+</script>    -->
+
+<!-- <script type="text/babel">
+class App extends React.Component{
+    render(){
+        return(
+            <h1> hello js class: {this.props.name}</h1>
+        );
+    }
+} 
+ReactDOM.render(<App name="nameproperty"/>,document.getElementById("divContainer"));
+</script> -->
+
+<!-- <script type="text/babel">
+    function App(props){
+        const [curr,setcurr] = React.useState(0);
+        const update = function test(){
+            setcurr(curr+1);
+        }
+                return(
+            <div>
+            <h1>hello js function: {props.name}</h1>
+            <h1>Count: {curr}</h1>
+            <button  onClick={()=>setcurr(curr+1)}>Total Number of counts are : {curr}</button>
+            <button  onClick={update}>Total Number of counts are : {curr}</button>
+            
+        </div>
+            );
+    }
+    ReactDOM.render(<App name="nameproperty"/>,document.getElementById("divContainer"));
+</script>    -->
+
+<!-- <script type="text/babel">
+class App extends React.Component{
+    constructor(){
+        super()
+       this.state ={
+        curr:0
+       };
+    }
+updatestate(){
+    this.setState((prv)=>{
+        return{
+            curr: prv.curr+1
+    };
+    })
+    }
+    render(){
+        return(
+            <div>
+           <h1>A: {this.state.curr}</h1>
+            <h1> hello js class: {this.props.name}</h1>
+            <button onClick={()=>{this.updatestate()}}>Number of times Clicked :{this.state.curr}</button>
+            <button onClick={()=>{this.setState((prv)=>{return{curr:prv.curr+1};})}}>Number of times Clicked :{this.state.curr}</button>
+        </div>
+            );
+    }
+} 
+ReactDOM.render(<App name="nameproperty"/>,document.getElementById("divContainer"));
+</script> -->
+
+ <script type="text/babel">
+    class App extends React.Component{
+        constructor(){
+            super()
+           this.state ={
+            curr:0
+           };
+        }
+    updatestate(){
+        this.setState((prv)=>{
+            return{
+                curr: prv.curr+1
+        };
+        })
+        }
+        componentDidMount(){
+            console.log("this is componentDidMount calling");
+        }
+        componentDidUpdate(){
+            console.log("this is componentDidUpdate calling");
+        }
+        componentDidUpdate(prv){
+            if(prv.curr != this.state.curr){
+            console.log("hello this is componentDidUpdate calling");
+        }
+        }
+        render(){
+            return(
+                <div>
+               <h1>A: {this.state.curr}</h1>
+                <h1> hello js class: {this.props.name}</h1>
+                <button onClick={()=>{this.updatestate()}}>Number of times Clicked :{this.state.curr}</button>
+                <button onClick={()=>{this.setState((prv)=>{return{curr:prv.curr+1};})}}>Number of times Clicked :{this.state.curr}</button>
+            </div>
+                );
+        }
+    } 
+    ReactDOM.render(<App name="nameproperty"/>,document.getElementById("divContainer"));
+    </script> 
+</body>
+</html>

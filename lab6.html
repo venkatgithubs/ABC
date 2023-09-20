@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="id"></div>
+    
+    <script type="text/babel">
+        function Appdom(props){
+            const [intctr,updatecte] = React.useState(0);
+
+                return(<div><h1>with functions</h1> <h1>hello {props.name}</h1> 
+                <div> num of times clicked {intctr}</div>
+                <button onClick={()=>updatecte(intctr+1)}>clicked times {intctr}</button>
+                </div>
+                
+                );
+            //}
+            
+        }
+        ReactDOM.render(<Appdom name="venkat"/>,document.getElementById("id"))
+    </script>
+</body>
+</html>

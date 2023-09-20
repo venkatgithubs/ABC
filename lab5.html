@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="id"></div>
+    
+    <script type="text/babel">
+        class Appdom extends React.Component{
+            constructor(){
+                super();
+                this.state = {
+                    count : 0
+                }
+            }
+            updatecount(){
+                this.setState((prvState)=>{
+return {
+    count : prvState.count+1
+}
+                })
+            }
+            render(){
+                return(<div><h1>with class</h1> 
+                <h1>Hello {this.props.name}</h1>
+                <div> <button onClick={()=>this.updatecount()}>Clicked {this.state.count} times</button></div>
+                </div>
+                
+                );
+            }
+            
+        }
+        ReactDOM.render(<Appdom name="venkat"/>,document.getElementById("id"))
+    </script>
+</body>
+</html>

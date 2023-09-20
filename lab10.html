@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+<div id="ids"></div>
+<script type="text/babel">
+    function AppTest(props){
+        const [intctr,updatecte]=React.useState(0);
+        // const [updateset] = (e) = >updatecte
+        return(<div>
+    <h1>hello:{props.name}</h1>
+    <div> num of times clicked {intctr}</div>
+    <input type="text" value ={intctr} onTextChange={updateset}/>
+                <button onClick={()=>updatecte(intctr+1)}>clicked times {intctr}</button>
+
+               
+    </div>
+        );
+    }
+    ReactDOM.render(<AppTest name="using property"/>,document.getElementById("ids"))
+</script>
+</body>
+</html>

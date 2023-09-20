@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</head>
+
+<body>
+    <div id="id"></div>
+    <div id="ids"></div>
+    <script>
+    ReactDOM.render(
+        React.createElement(
+            'h1',
+            null,
+            'hello world'
+            ),
+            document.getElementById("id")
+    );
+    ReactDOM.render(
+        React.createElement(
+            'h1',
+            null,
+            'hello world!'
+            ),
+            document.getElementById("ids")
+    );
+</script>
+</body>
+</html>
